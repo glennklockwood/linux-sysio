@@ -1,0 +1,23 @@
+
+This tree contains source to generate a version of the sysio 
+library, called libsysiox.a, which can be used to link apps 
+intended for execution on a standard Linux node. 
+
+This library shares some of the source code in the libsysio 
+tree using VPATH, thus the libsysio source must be present 
+in order to build it.
+
+To build libsysiox.a, run:
+
+./autogen.sh
+./configure [options]
+make
+
+Option --with-sysio-src=<dir> allows the path to the libsysio 
+source to be specified. Default is ../libsysio.
+
+Option --with-tests=<yes|no> enables/disables build in the test 
+subdirectory. Default is yes.
+
+Option --with-emulation=<yes|no> enables/disables use of a local 
+set of dummy wrappers for aio calls. Default is yes.
